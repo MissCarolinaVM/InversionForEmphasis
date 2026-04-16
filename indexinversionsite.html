@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inversion for Emphasis – C1 Practice</title>
+  <meta name="description" content="A student-friendly academic website where C1 learners review inversion for emphasis and practise it through interactive activities with feedback." />
+  <meta property="og:title" content="Inversion for Emphasis – C1 Practice" />
+  <meta property="og:description" content="Review inversion for emphasis, explore examples, and complete C1 practice with instant feedback." />
+  <meta property="og:type" content="website" />
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=zodiak@400,700&display=swap" rel="stylesheet">
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem;
+      --space-5: 1.25rem; --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem;
+      --space-12: 3rem; --space-16: 4rem; --space-20: 5rem;
+      --color-bg: #f7f6f2; --color-surface: #f9f8f5; --color-surface-2: #fbfbf9;
+      --color-surface-offset: #edeae5; --color-border: #d4d1ca; --color-divider: #dcd9d5;
+      --color-text: #28251d; --color-text-muted: #67655f; --color-text-faint: #9a9892;
+      --color-text-inverse: #f9f8f4; --color-primary: #01696f; --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #dbe9e7; --color-success: #437a22; --color-warning: #964219;
+      --radius-sm: 0.375rem; --radius-md: 0.5rem; --radius-lg: 0.9rem; --radius-xl: 1.25rem;
+      --radius-full: 9999px; --shadow-sm: 0 1px 2px rgb(40 37 29 / 0.06); --shadow-md: 0 10px 30px rgb(40 37 29 / 0.08);
+      --content-default: 1120px; --font-display: 'Zodiak', Georgia, serif; --font-body: 'General Sans', Arial, sans-serif;
+      --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    [data-theme="dark"] {
+      --color-bg: #171614; --color-surface: #1c1b19; --color-surface-2: #201f1d;
+      --color-surface-offset: #262421; --color-border: #393836; --color-divider: #2d2c2a;
+      --color-text: #e3e0d9; --color-text-muted: #b4b0a8; --color-text-faint: #8a867e;
+      --color-text-inverse: #171614; --color-primary: #63abb3; --color-primary-hover: #7dc0c7;
+      --color-primary-highlight: #213334; --color-success: #8ec16d; --color-warning: #d29366;
+      --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.24); --shadow-md: 0 12px 36px rgb(0 0 0 / 0.32);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:none;text-size-adjust:none;scroll-behavior:smooth;scroll-padding-top:5rem}
+    body{min-height:100vh;font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;background:var(--color-bg);color:var(--color-text)}
+    img,svg{display:block;max-width:100%;height:auto}
+    button,input,select,textarea{font:inherit;color:inherit}
+    a{color:inherit;text-decoration:none}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .container{width:min(calc(100% - 2rem),var(--content-default));margin-inline:auto}
+    .skip-link{position:absolute;left:1rem;top:-3rem;background:var(--color-primary);color:var(--color-text-inverse);padding:var(--space-3) var(--space-4);border-radius:var(--radius-full);z-index:100}
+    .skip-link:focus{top:1rem}
+    .site-header{position:sticky;top:0;z-index:50;background:color-mix(in oklab, var(--color-bg) 88%, transparent);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in oklab,var(--color-text) 10%, transparent)}
+    .site-header .container{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-4) 0}
+    .brand{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);font-weight:600}
+    .brand svg{width:2rem;height:2rem;color:var(--color-primary)}
+    .nav{display:flex;align-items:center;gap:var(--space-4);flex-wrap:wrap}
+    .nav a{font-size:var(--text-sm);color:var(--color-text-muted)}
+    .nav a:hover,.nav a[aria-current="page"]{color:var(--color-text)}
+    .theme-toggle,.mobile-toggle,.btn{border:none;border-radius:var(--radius-full);transition:transform var(--transition-interactive),background var(--transition-interactive),color var(--transition-interactive),box-shadow var(--transition-interactive)}
+    .theme-toggle,.mobile-toggle{display:grid;place-items:center;width:44px;height:44px;background:var(--color-surface);border:1px solid color-mix(in oklab,var(--color-text) 10%, transparent)}
+    .theme-toggle:hover,.mobile-toggle:hover,.btn:hover{transform:translateY(-1px)}
+    .mobile-toggle{display:none}
+    .hero{padding:clamp(var(--space-12),10vw,var(--space-20)) 0 var(--space-12)}
+    .hero-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:var(--space-8);align-items:start}
+    .eyebrow{display:inline-flex;align-items:center;gap:var(--space-2);padding:var(--space-2) var(--space-3);border-radius:var(--radius-full);font-size:var(--text-xs);letter-spacing:.08em;text-transform:uppercase;background:var(--color-primary-highlight);color:var(--color-primary);font-weight:700}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.08}
+    h1{font-size:var(--text-2xl);max-width:12ch;margin:var(--space-4) 0}
+    h2{font-size:var(--text-xl);margin-bottom:var(--space-4)}
+    h3{font-size:var(--text-lg)}
+    .hero p{max-width:60ch;color:var(--color-text-muted)}
+    .hero-actions{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-6)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0.85rem 1.2rem;font-size:var(--text-sm);font-weight:600;cursor:pointer}
+    .btn-primary{background:var(--color-primary);color:var(--color-text-inverse);box-shadow:var(--shadow-sm)}
+    .btn-primary:hover{background:var(--color-primary-hover)}
+    .btn-secondary{background:var(--color-surface);border:1px solid color-mix(in oklab,var(--color-text) 10%, transparent)}
+    .hero-card,.panel,.topic-card,.quiz-card,.resource-card{background:var(--color-surface);border:1px solid color-mix(in oklab,var(--color-text) 10%, transparent);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm)}
+    .hero-card{padding:var(--space-6);display:grid;gap:var(--space-4)}
+    .progress-row{display:flex;justify-content:space-between;gap:var(--space-4);font-size:var(--text-sm);color:var(--color-text-muted)}
+    .progress{height:12px;background:var(--color-surface-offset);border-radius:var(--radius-full);overflow:hidden}
+    .progress > span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--color-primary),color-mix(in oklab,var(--color-primary) 64%, white));border-radius:inherit;transition:width 300ms ease}
+    section{padding:var(--space-10) 0}
+    .section-head{display:flex;justify-content:space-between;gap:var(--space-4);align-items:end;margin-bottom:var(--space-6)}
+    .section-head p{max-width:60ch;color:var(--color-text-muted)}
+    .topic-grid,.practice-grid,.resource-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4)}
+    .topic-card,.quiz-card,.resource-card{padding:var(--space-5)}
+    .topic-card h3,.quiz-card h3,.resource-card h3{margin-bottom:var(--space-3)}
+    .topic-card p,.quiz-card p,.resource-card p,.panel p,.feedback{color:var(--color-text-muted)}
+    .tag-row{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4)}
+    .tag{padding:0.35rem 0.7rem;border-radius:var(--radius-full);background:var(--color-surface-offset);font-size:var(--text-xs);color:var(--color-text-muted)}
+    .learning-layout{display:grid;grid-template-columns:0.95fr 1.05fr;gap:var(--space-6);align-items:start}
+    .panel{padding:var(--space-6)}
+    .panel + .panel{margin-top:var(--space-4)}
+    .lesson-nav{display:flex;gap:var(--space-2);flex-wrap:wrap;margin:var(--space-5) 0}
+    .lesson-chip{padding:0.55rem 0.9rem;border-radius:var(--radius-full);background:var(--color-surface-offset);border:1px solid transparent;font-size:var(--text-sm);cursor:pointer}
+    .lesson-chip.active{background:var(--color-primary-highlight);color:var(--color-primary);border-color:color-mix(in oklab,var(--color-primary) 20%, transparent)}
+    .lesson-points{display:grid;gap:var(--space-3);margin-top:var(--space-5)}
+    .lesson-point{display:grid;grid-template-columns:auto 1fr;gap:var(--space-3);align-items:start;padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-2)}
+    .lesson-point strong{display:block;margin-bottom:0.25rem}
+    .lesson-icon{width:1.8rem;height:1.8rem;border-radius:50%;background:var(--color-primary-highlight);color:var(--color-primary);display:grid;place-items:center;font-size:var(--text-sm);font-weight:700}
+    .note{margin-top:var(--space-5);padding:var(--space-4);border-radius:var(--radius-lg);background:color-mix(in oklab,var(--color-warning) 10%, var(--color-surface));border:1px solid color-mix(in oklab,var(--color-warning) 18%, transparent)}
+    .quiz-form{display:grid;gap:var(--space-5)}
+    .question{padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-2)}
+    .question legend{font-weight:700;margin-bottom:var(--space-3)}
+    .options{display:grid;gap:var(--space-2)}
+    .option{display:flex;gap:var(--space-3);align-items:flex-start;padding:var(--space-3);border-radius:var(--radius-md);background:var(--color-surface);border:1px solid color-mix(in oklab,var(--color-text) 8%, transparent)}
+    .option input{margin-top:0.25rem}
+    .feedback{padding:var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-2);min-height:72px}
+    .feedback.success{color:var(--color-success)}
+    .feedback.warning{color:var(--color-warning)}
+    .two-column{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4)}
+    .site-footer{padding:var(--space-10) 0;border-top:1px solid color-mix(in oklab,var(--color-text) 10%, transparent);color:var(--color-text-muted)}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:var(--space-4)}
+    @media (max-width: 980px){
+      .hero-grid,.learning-layout,.footer-grid,.topic-grid,.practice-grid,.resource-grid,.two-column{grid-template-columns:1fr}
+      .nav{position:absolute;left:1rem;right:1rem;top:calc(100% + 0.5rem);padding:var(--space-4);background:var(--color-surface);border:1px solid color-mix(in oklab,var(--color-text) 10%, transparent);border-radius:var(--radius-xl);box-shadow:var(--shadow-md);display:none;flex-direction:column;align-items:flex-start}
+      .nav.open{display:flex}
+      .mobile-toggle{display:grid}
+    }
+    @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto;transition:none !important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top" aria-label="Inversion for Emphasis site home">
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M32 8 10 18v16c0 10.4 7.5 19.9 22 22 14.5-2.1 22-11.6 22-22V18L32 8Z" stroke="currentColor" stroke-width="4"/>
+          <path d="M22 31h20M22 40h13M32 18v28" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span>Inversion for Emphasis – C1</span>
+      </a>
+      <button class="mobile-toggle" type="button" aria-expanded="false" aria-controls="site-nav">☰</button>
+      <nav id="site-nav" class="nav" aria-label="Primary navigation">
+        <a href="#overview" aria-current="page">Overview</a>
+        <a href="#content">Lesson</a>
+        <a href="#practice">Practice</a>
+        <a href="#resources">Study tools</a>
+      </nav>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">◐</button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" id="overview">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">C1 grammar • inversion for emphasis</span>
+          <h1>Learn how to use inversion for emphasis in advanced English.</h1>
+          <p>This mini-website is designed for C1 learners: you review the core idea, look at typical patterns, study examples from different contexts, and then complete a short practice activity with instant feedback.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#content">Start the lesson</a>
+            <a class="btn btn-secondary" href="#practice">Go to practice</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Learning progress overview">
+          <div>
+            <h2 style="font-size:var(--text-lg);margin-bottom:0.4rem;font-family:var(--font-body)">What you will do here</h2>
+            <p>Understand what inversion for emphasis is, when to use it, and how to produce it accurately in formal and semi-formal English.</p>
+          </div>
+          <div>
+            <div class="progress-row"><span>Completion tracker</span><strong id="progress-text">0 of 4 completed</strong></div>
+            <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+          </div>
+          <div class="tag-row">
+            <span class="tag">C1 level</span>
+            <span class="tag">Self-paced</span>
+            <span class="tag">Answer key included</span>
+            <span class="tag">Responsive</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>How this lesson works</h2>
+            <p>You move through three short stages: review the explanation, study model sentences, and then try a focused practice activity with feedback and an answer key.</p>
+          </div>
+        </div>
+        <div class="topic-grid">
+          <article class="topic-card">
+            <h3>1. Core idea</h3>
+            <p>First, you see what inversion for emphasis is and why advanced users choose it in formal texts and dramatic stories.</p>
+          </article>
+          <article class="topic-card">
+            <h3>2. Form and patterns</h3>
+            <p>Next, you review common patterns after negative adverbials and only-expressions so you can produce inversion accurately.</p>
+          </article>
+          <article class="topic-card">
+            <h3>3. Practice and reflection</h3>
+            <p>Finally, you complete C1-style exercises and reflect on when inversion is appropriate in your own writing and speaking.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="content">
+      <div class="container learning-layout">
+        <div>
+          <div class="section-head">
+            <div>
+              <h2>Lesson: inversion for emphasis</h2>
+              <p>Read the short explanation and move through the tabs. You can revisit any tab before or after doing the practice activity.</p>
+            </div>
+          </div>
+          <div class="panel">
+            <p class="eyebrow" style="margin-bottom:1rem">C1 focus</p>
+            <h3 id="lesson-title">Understanding inversion for emphasis</h3>
+            <p id="lesson-intro" style="margin-top:1rem">Inversion for emphasis happens when the normal subject–auxiliary order is reversed to make part of the sentence more prominent. It is typical of formal English, literary style, and advanced exams.</p>
+            <div class="lesson-nav" role="tablist" aria-label="Lesson sections">
+              <button class="lesson-chip active" data-lesson="0" role="tab" aria-selected="true">Core idea</button>
+              <button class="lesson-chip" data-lesson="1" role="tab" aria-selected="false">Structure</button>
+              <button class="lesson-chip" data-lesson="2" role="tab" aria-selected="false">Examples</button>
+            </div>
+            <div class="lesson-points" id="lesson-points"></div>
+            <div class="note" id="lesson-note"></div>
+          </div>
+        </div>
+
+        <div id="practice">
+          <div class="section-head">
+            <div>
+              <h2>Practice activity (C1)</h2>
+              <p>Answer the questions and then check your answers. You will see feedback and a short answer key with model sentences.</p>
+            </div>
+          </div>
+          <div class="quiz-card">
+            <form class="quiz-form" id="quiz-form">
+              <fieldset class="question">
+                <legend>1. Choose the correct sentence with inversion after a limiting expression.</legend>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q1" value="a"> <span>Only when he came home he realized she’d left him for another man.</span></label>
+                  <label class="option"><input type="radio" name="q1" value="b"> <span>Only when he came home did he realize she’d left him for another man.</span></label>
+                  <label class="option"><input type="radio" name="q1" value="c"> <span>Only he came home did he realize she’d left him for another man.</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="question">
+                <legend>2. Choose the correct sentence with inversion after a negative adverbial.</legend>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q2" value="a"> <span>Rarely I have seen such a ruthless breakup.</span></label>
+                  <label class="option"><input type="radio" name="q2" value="b"> <span>Rarely have I seen such a ruthless breakup.</span></label>
+                  <label class="option"><input type="radio" name="q2" value="c"> <span>Rarely had I see such a ruthless breakup.</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="question">
+                <legend>3. Choose the correct sentence with “no sooner … than”.</legend>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q3" value="a"> <span>No sooner I had told her the truth than she blocked his number.</span></label>
+                  <label class="option"><input type="radio" name="q3" value="b"> <span>No sooner had I told her the truth when she blocked his number.</span></label>
+                  <label class="option"><input type="radio" name="q3" value="c"> <span>No sooner had I told her the truth than she blocked his number.</span></label>
+                </div>
+              </fieldset>
+
+              <fieldset class="question">
+                <legend>4. Sentence transformation: rewrite with inversion for emphasis.</legend>
+                <p><strong>Base sentence:</strong> He only realized she’d left him for another man when he came home.</p>
+                <p><strong>Write your version starting with:</strong> Only when…</p>
+                <textarea name="q4" rows="3" style="width:100%;margin-top:0.75rem;border-radius:0.6rem;border:1px solid color-mix(in oklab,var(--color-text) 10%, transparent);padding:0.6rem;"></textarea>
+              </fieldset>
+
+              <fieldset class="question">
+                <legend>5. Function: why use inversion here?</legend>
+                <p>Only when the leaked messages appeared online did the scandal become public.</p>
+                <div class="options">
+                  <label class="option"><input type="radio" name="q5" value="a"> <span>To make the sentence sound informal and conversational.</span></label>
+                  <label class="option"><input type="radio" name="q5" value="b"> <span>To add emphasis and make the timing of the scandal becoming public more dramatic.</span></label>
+                  <label class="option"><input type="radio" name="q5" value="c"> <span>To avoid using auxiliary verbs.</span></label>
+                </div>
+              </fieldset>
+
+              <div class="two-column">
+                <button class="btn btn-primary" type="submit">Check answers</button>
+                <button class="btn btn-secondary" type="button" id="reset-quiz">Reset activity</button>
+              </div>
+
+              <div class="feedback" id="feedback" aria-live="polite">Answer the questions and click “Check answers.”</div>
+              <div class="note" id="answer-key" style="margin-top:1rem; display:none;"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Study tools</h2>
+            <p>Use these prompts to reflect on the form, the effect, and the appropriacy of inversion in your own speaking and writing.</p>
+          </div>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card">
+            <h3>Key takeaway</h3>
+            <p>Inversion after negative and limiting expressions is grammatically marked and tends to sound formal, emphatic, or dramatic. Use it when you really want to foreground an idea.</p>
+          </article>
+          <article class="resource-card">
+            <h3>Reflection prompt</h3>
+            <p>Where in your academic writing could inversion make an argument more striking, and where would it sound too theatrical or inappropriate?</p>
+          </article>
+          <article class="resource-card">
+            <h3>Next step</h3>
+            <p>Write a short paragraph (5–6 sentences) about a research project, a policy change, or a dramatic event. Include at least two correct examples of inversion for emphasis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong style="display:block;margin-bottom:0.5rem;color:var(--color-text)">Inversion for emphasis – C1 template</strong>
+        <p>You can adapt this page for other advanced grammar topics by changing the text in the lesson tabs and the practice section.</p>
+      </div>
+      <div>
+        <p><strong style="color:var(--color-text)">Good for:</strong> exam preparation, academic writing support, and autonomous practice.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const lessonData = [
+      {
+        title: 'Understanding inversion for emphasis',
+        intro: 'Inversion for emphasis happens when the normal subject–auxiliary order is reversed to make part of the sentence more prominent. It is common after certain negative or limiting expressions and often appears in formal, written, and dramatic language.',
+        points: [
+          ['What changes?', 'Normally, English clauses use subject + auxiliary + main verb. With inversion, the auxiliary comes before the subject.'],
+          ['Why use it?', 'Writers and speakers use inversion to emphasise an idea, create a more formal tone, or make the narrative sound more dramatic.'],
+          ['Where do you see it?', 'You can see inversion in academic writing, journalism, speeches, fiction, and advanced exam tasks.']
+        ],
+        note: '<strong>Tip:</strong> Inversion is not neutral; it is a marked choice. C1 users need to recognise both the meaning and the effect on tone.'
+      },
+      {
+        title: 'Structure and typical patterns',
+        intro: 'Most inversion for emphasis at this level happens after negative or limiting adverbials and only-expressions. These elements are moved to the front of the clause, and the auxiliary verb is placed before the subject.',
+        points: [
+          ['Negative adverbials', 'Never, rarely, seldom, hardly, scarcely, barely, at no time, in no way, under no circumstances, on no account, etc., can trigger inversion when fronted.'],
+          ['Only-expressions', 'Only when, only after, only then, only later, only by, only in this way, etc., often take inversion in the following clause.'],
+          ['Core pattern', 'Negative/limiting expression + auxiliary/modal + subject + main verb. If there is no auxiliary in the affirmative sentence, we usually use do/does/did.']
+        ],
+        note: '<strong>Practice idea:</strong> Take two normal sentences and rewrite them using inversion after a negative adverbial or an only-expression.'
+      },
+      {
+        title: 'Examples in different contexts',
+        intro: 'Here are examples from academic, everyday, and more dramatic “gossip-style” contexts. Notice how inversion changes the tone and makes the highlighted element stand out.',
+        points: [
+          ['Academic', 'Rarely have researchers had access to such detailed longitudinal data.'],
+          ['University life', 'Only after several late-night study sessions did the group feel ready for the exam.'],
+          ['Gossip / dramatic', 'Only when he came home did he realize she’d left him for another man.']
+        ],
+        note: '<strong>Extension task:</strong> Write two similar sentences about your own context: one academic example and one more narrative or dramatic example.'
+      }
+    ];
+
+    const completed = { content: false, practice: false, tools: false, start: true };
+    const progressBar = document.getElementById('progress-bar');
+    const progressText = document.getElementById('progress-text');
+    const lessonTitle = document.getElementById('lesson-title');
+    const lessonIntro = document.getElementById('lesson-intro');
+    const lessonPoints = document.getElementById('lesson-points');
+    const lessonNote = document.getElementById('lesson-note');
+    const chips = document.querySelectorAll('.lesson-chip');
+    const nav = document.getElementById('site-nav');
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const themeToggle = document.querySelector('[data-theme-toggle]');
+    const root = document.documentElement;
+
+    function updateProgress(){
+      const total = 4;
+      const done = Object.values(completed).filter(Boolean).length;
+      progressBar.style.width = `${(done / total) * 100}%`;
+      progressText.textContent = `${done} of ${total} completed`;
+    }
+
+    function renderLesson(index){
+      const lesson = lessonData[index];
+      lessonTitle.textContent = lesson.title;
+      lessonIntro.textContent = lesson.intro;
+      lessonPoints.innerHTML = lesson.points.map(([title, text], i) => `
+        <article class="lesson-point">
+          <div class="lesson-icon">${i + 1}</div>
+          <div><strong>${title}</strong><span>${text}</span></div>
+        </article>`).join('');
+      lessonNote.innerHTML = lesson.note;
+      chips.forEach((chip, chipIndex) => {
+        const active = chipIndex === index;
+        chip.classList.toggle('active', active);
+        chip.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      completed.content = true;
+      updateProgress();
+    }
+
+    chips.forEach(chip => chip.addEventListener('click', () => renderLesson(Number(chip.dataset.lesson))));
+    renderLesson(0);
+
+    mobileToggle?.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    let currentTheme = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    root.setAttribute('data-theme', currentTheme);
+    themeToggle?.addEventListener('click', () => {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', currentTheme);
+    });
+
+    const answers = { q1: 'b', q2: 'b', q3: 'c', q5: 'b' };
+    const quizForm = document.getElementById('quiz-form');
+    const feedback = document.getElementById('feedback');
+    const resetQuiz = document.getElementById('reset-quiz');
+    const answerKeyBox = document.getElementById('answer-key');
+
+    quizForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      let score = 0;
+      const details = [];
+      Object.entries(answers).forEach(([name, correct], index) => {
+        const field = quizForm.elements[name];
+        const selected = field && field.value ? field.value : '';
+        if (selected === correct) {
+          score += 1;
+          details.push(`Question ${index + 1}: correct`);
+        } else if (!selected) {
+          details.push(`Question ${index + 1}: unanswered`);
+        } else {
+          details.push(`Question ${index + 1}: review this concept`);
+        }
+      });
+
+      completed.practice = true;
+      completed.tools = true;
+      updateProgress();
+
+      feedback.className = 'feedback ' + (score >= 3 ? 'success' : 'warning');
+      feedback.innerHTML = `<strong>Your score: ${score}/4 (Q1–3 and 5).</strong><br>${details.join(' · ')}<br>${score < 4 ? 'Tip: revisit the lesson tabs and try again.' : 'Excellent. Try writing your own examples next.'}`;
+
+      answerKeyBox.style.display = 'block';
+      answerKeyBox.innerHTML = `
+        <strong>Answer key:</strong><br>
+        Q1: Only when he came home <em>did he realize</em> she’d left him for another man.<br>
+        Q2: Rarely <em>have I seen</em> such a ruthless breakup.<br>
+        Q3: No sooner <em>had I told</em> her the truth <em>than</em> she blocked his number.<br>
+        Q4 (model): Only when he came home did he realize she’d left him for another man.<br>
+        Q5: The inversion emphasises the specific moment when the scandal became public (answer: b).
+      `;
+    });
+
+    resetQuiz.addEventListener('click', () => {
+      quizForm.reset();
+      feedback.className = 'feedback';
+      feedback.textContent = 'Answer the questions and click “Check answers.”';
+      answerKeyBox.style.display = 'none';
+      answerKeyBox.innerHTML = '';
+      completed.practice = false;
+      updateProgress();
+    });
+
+    updateProgress();
+  </script>
+</body>
+</html>
